@@ -60,8 +60,9 @@ class LoggerFactory:
         if name is None:
             raise ValueError("name for logger cannot be None")
 
-        formatter = logging.Formatter("[%(asctime)s] [%(levelname)s] "
-                                      "[%(filename)s:%(lineno)d:%(funcName)s] %(message)s")
+        formatter = logging.Formatter(
+            fmt=' ┇ '.join(['%(asctime)s', '%(levelname)-7s', '%(name)48s', '%(message)s']),
+            datefmt="[%m.%d %H:%M:%S]")  # by chrisjihee@2025.01.17
 
         logger_ = logging.getLogger(name)
         logger_.setLevel(level)
@@ -79,7 +80,7 @@ class LoggerFactory:
         return logger_
 
 
-logger = LoggerFactory.create_logger(name="DeepSpeed", level=logging.INFO)
+logger = LoggerFactory.create_logger(name="DeepSpeed", level=logging.WARNING)  # by chrisjihee@2025.01.17
 
 
 @functools.lru_cache(None)
