@@ -80,7 +80,7 @@ class LoggerFactory:
         return logger_
 
 
-logger = LoggerFactory.create_logger(name="DeepSpeed", level=logging.WARNING)  # by chrisjihee@2025.01.17
+logger = LoggerFactory.create_logger(name="DeepSpeed", level=logging.INFO)
 
 
 @functools.lru_cache(None)
