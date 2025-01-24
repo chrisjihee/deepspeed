@@ -61,7 +61,7 @@ class LoggerFactory:
             raise ValueError("name for logger cannot be None")
 
         formatter = logging.Formatter(
-            fmt=' ┇ '.join(['%(asctime)s', '%(levelname)-7s', '%(name)48s', '%(message)s']),
+            fmt=' ┇ '.join(['%(asctime)s', '%(levelname)-7s', '%(name)20s', '%(message)s']),
             datefmt="[%m.%d %H:%M:%S]")  # by chrisjihee@2025.01.17
 
         logger_ = logging.getLogger(name)
