@@ -29,6 +29,7 @@ from .constants import PDSH_LAUNCHER, OPENMPI_LAUNCHER, MVAPICH_LAUNCHER, SLURM_
 from ..constants import TORCH_DISTRIBUTED_DEFAULT_PORT
 from ..nebula.constants import NEBULA_EXPORT_ENVS
 from ..utils import logger
+logger = logger.getChild("runner")  # by chrisjihee@2025.04.25
 
 from ..autotuning import Autotuner
 from deepspeed.accelerator import get_accelerator

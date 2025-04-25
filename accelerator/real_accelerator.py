@@ -8,6 +8,7 @@ try:
     # Importing logger currently requires that torch is installed, hence the try...except
     # TODO: Remove logger dependency on torch.
     from deepspeed.utils import logger as accel_logger
+    accel_logger = accel_logger.getChild("accelerator")  # by chrisjihee@2025.04.25
 except ImportError as e:
     accel_logger = None
 

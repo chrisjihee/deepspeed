@@ -60,8 +60,9 @@ class LoggerFactory:
 
 logger = LoggerFactory.create_logger(name="DeepSpeed", level=logging.INFO)
 for h in logger.handlers:  # by chrisjihee@2025.04.25
-    h.setFormatter(logging.Formatter(fmt="%(asctime)s ┇ %(levelname)-7s ┇ %(name)24s ┇ %(filename)30s:%(lineno)-4d ┇ %(message)s",
-                                     datefmt="[%m.%d %H:%M:%S]"))
+    fmt = "%(asctime)s ┇ %(levelname)-7s ┇ %(name)30s ┇ %(message)s"
+    # fmt = "%(pathname)120s:%(lineno)-5d ┇ %(asctime)s ┇ %(levelname)-7s ┇ %(name)30s ┇ %(message)s"
+    h.setFormatter(logging.Formatter(fmt=fmt, datefmt="[%m.%d %H:%M:%S]"))
 
 
 @functools.lru_cache(None)

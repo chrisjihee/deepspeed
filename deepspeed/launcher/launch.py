@@ -26,6 +26,8 @@ from deepspeed.accelerator import get_accelerator
 from ..constants import TORCH_DISTRIBUTED_DEFAULT_PORT
 from ..nebula.constants import DLTS_POD_ENV_PATH
 from ..utils import logger, get_numactl_cmd
+logger = logger.getChild("launch")  # by chrisjihee@2025.04.25
+
 from ..elasticity import is_torch_elastic_compatible
 from .constants import ELASTIC_TRAINING_ID_DEFAULT
 

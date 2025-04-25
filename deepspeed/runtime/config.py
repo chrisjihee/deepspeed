@@ -38,6 +38,7 @@ from deepspeed.runtime.config_utils import DeepSpeedConfigModel
 
 from ..git_version_info import version as __version__
 from ..utils import logger
+logger = logger.getChild("config")  # by chrisjihee@2025.04.25
 
 from ..elasticity import (
     elasticity_enabled,

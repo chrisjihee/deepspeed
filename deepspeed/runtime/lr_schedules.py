@@ -13,6 +13,7 @@ import argparse
 from torch.optim import Optimizer
 import math
 from deepspeed.utils import logger
+logger = logger.getChild("lr_schedules")  # by chrisjihee@2025.04.25
 
 LR_SCHEDULE = 'lr_schedule'
 LR_RANGE_TEST = 'LRRangeTest'

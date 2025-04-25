@@ -7,6 +7,7 @@ import torch
 from deepspeed.utils import logger, log_dist
 from deepspeed.runtime.checkpoint_engine.checkpoint_engine import \
     CheckpointEngine
+logger = logger.getChild("checkpoint_engine")  # by chrisjihee@2025.04.25
 
 
 class TorchCheckpointEngine(CheckpointEngine):
